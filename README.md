@@ -1,3 +1,3 @@
-# hw3
+# HI programming language
 
-[![MIT license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com//fp-homework1/blob/master/hw3/LICENSE)
+REPL-style programming language
