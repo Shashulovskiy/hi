@@ -1,0 +1,73 @@
+name:                hi
+version:             0.1.0.0
+synopsis:            Synopsis for hi
+description:         REPL-style programming language
+
+homepage:            https://github.com//fp-homework1/tree/master/hw3#readme
+license:             MIT
+license-file:        LICENSE
+author:              Artem Shashulovskiy
+maintainer:          Shashulovskiy@gmail.com
+copyright:           2022 Shashulovskiy Artem
+
+category:            Web
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+tested-with:         GHC == 8.0.1
+
+library
+  hs-source-dirs:
+        src
+  exposed-modules:
+        HI.Base
+        HI.Evaluator
+        HI.Parser
+        HI.Pretty
+        HI.Action
+        HI.Instances
+  ghc-options:         -Wall
+  build-depends:
+        base >=4.7 && <5
+      , bytestring
+      , zlib
+      , containers
+      , megaparsec
+      , parser-combinators
+      , prettyprinter
+      , prettyprinter-ansi-terminal
+      , random
+      , scientific
+      , text
+      , time
+      , serialise
+      , mtl
+      , transformers
+      , directory
+      , either
+  default-language:    Haskell2010
+
+executable hi
+  hs-source-dirs:      app
+  main-is:             Main.hs
+  ghc-options:         -Wall -Werror -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+        base >=4.7 && <5
+      , haskeline
+      , hi
+      , containers
+      , mtl
+  default-language:    Haskell2010
+
+test-suite hi-test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Spec.hs
+  build-depends:
+        base
+      , hi
+      , hspec
+      , mtl
+      , raw-strings-qq
+  ghc-options:         -Wall -threaded -rtsopts -with-rtsopts=-N
+  default-language:    Haskell2010
